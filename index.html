@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate a no-Slick Instagram post carousel from Instagram post and reel URLs.">
+    <title>Instagram Post Carousel Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="igcg-page">
+        <section class="igcg-hero" aria-labelledby="igcgPageTitle">
+            <div class="igcg-container">
+                <p class="igcg-kicker">No-Slick Carousel Tool</p>
+                <h1 id="igcgPageTitle">Instagram Post Carousel Generator</h1>
+                <p>
+                    Paste Instagram post or reel URLs, generate a responsive carousel, preview it, and copy the finished HTML, CSS, and JavaScript.
+                </p>
+            </div>
+        </section>
+
+        <section class="igcg-container igcg-generator" aria-labelledby="igcgGeneratorTitle">
+            <div class="igcg-panel igcg-help">
+                <h2 id="igcgGeneratorTitle">How to use this generator</h2>
+                <ol>
+                    <li>Open the Instagram post or reel you want to include.</li>
+                    <li>Copy the full URL from the browser address bar, or use Instagram's share option to copy the link.</li>
+                    <li>Paste one Instagram URL per line into the field below.</li>
+                    <li>Click <strong>Generate Carousel Code</strong>, then copy the generated code.</li>
+                </ol>
+
+                <p><strong>Recommended URL format:</strong></p>
+                <p><code>https://www.instagram.com/ford/reel/DZ7nrziALx6/</code></p>
+
+                <p><strong>You can also enter IDs manually:</strong></p>
+                <p>
+                    For a regular post, use <code>p:POST_ID</code><br>
+                    For a reel, use <code>reel:REEL_ID</code>
+                </p>
+
+                <p>
+                    The ID is the part after <code>/p/</code> or <code>/reel/</code>. For example, in
+                    <code>https://www.instagram.com/ford/reel/DZ7nrziALx6/</code>, the reel ID is
+                    <code>DZ7nrziALx6</code>.
+                </p>
+            </div>
+
+            <div class="igcg-panel">
+                <div class="igcg-field">
+                    <label for="igcgDefaultType">Default type for bare IDs</label>
+                    <select id="igcgDefaultType">
+                        <option value="p">Post</option>
+                        <option value="reel">Reel</option>
+                    </select>
+                </div>
+
+                <div class="igcg-field">
+                    <label for="igcgPostInput">Instagram post/reel URLs or IDs</label>
+                    <textarea id="igcgPostInput" placeholder="Paste one Instagram post or reel URL per line. You can also click Load Demo URLs."></textarea>
+                </div>
+
+                <div class="igcg-button-row" aria-label="Generator actions">
+                    <button type="button" class="igcg-button igcg-button-secondary" id="igcgDemoBtn">Load Demo URLs</button>
+                    <button type="button" class="igcg-button" id="igcgGenerateBtn">Generate Carousel Code</button>
+                    <button type="button" class="igcg-button igcg-button-secondary" id="igcgCopyBtn">Copy Code</button>
+                    <button type="button" class="igcg-button igcg-button-secondary" id="igcgPreviewBtn">Update Preview</button>
+                    <button type="button" class="igcg-button igcg-button-secondary" id="igcgClearBtn">Clear URLs</button>
+                </div>
+
+                <div class="igcg-status" id="igcgStatus" role="status" aria-live="polite">
+                    Paste Instagram URLs above, or click Load Demo URLs to test the generator.
+                </div>
+
+                <div class="igcg-field">
+                    <label for="igcgOutput">Generated carousel code</label>
+                    <textarea id="igcgOutput" class="igcg-output" readonly></textarea>
+                </div>
+
+                <div class="igcg-field">
+                    <label for="igcgPreviewFrame">Preview</label>
+                    <iframe id="igcgPreviewFrame" class="igcg-preview-frame" title="Instagram carousel preview"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
